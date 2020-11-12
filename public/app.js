@@ -3,6 +3,8 @@ const auth = firebase.auth();
 const whenSignedIn = document.getElementById('whenSignedIn');
 const whenSignedOut = document.getElementById('whenSignedOut');
 
+const displayName = document.getElementById('displayName');
+
 const signInBtn = document.getElementById('signInBtn');
 const signOutBtn = document.getElementById('signOutBtn');
 
@@ -16,6 +18,8 @@ auth.onAuthStateChanged(user => {
         // signed in
         whenSignedIn.hidden = false;
         whenSignedOut.hidden = true;
+        displayName.textContent = user.displayName+"";
+        
     } else {
         // not signed in
         whenSignedIn.hidden = true;
