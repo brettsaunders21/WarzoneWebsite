@@ -20,78 +20,99 @@
   </head>
 
   <body>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Warzone Tournament</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Warzone Tournament</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarColor02">
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
+              <li class="nav-item active">
+                 <a class="nav-link waves-effect waves-light" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link waves-effect waves-light" href="#">Future Tournament</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link waves-effect waves-light" href="#">Stats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-effect waves-light" href="#">About</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Future Tournament</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Stats</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <!-- Nav Item - User Information -->
-            <li class="nav navbar-nav navbar-right>
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span id = "displayName">Sign In First</span>
-                  <img class="img-profile rounded-circle"
-                      src=""+user.photoURL>
-              </a>
-
-              <div class="topbar-divider d-none d-sm-block"></div>
-
-              <section id="whenSignedOut" class="form-inline my-2 my-lg-0">
-                <button id="signInBtn" class="btn btn-primary my-2 my-sm-0">Login</button>
-              </section>
-    
-              <section id="whenSignedIn" hidden="true">
-                <!-- Dropdown - User Information -->
-                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                aria-labelledby="userDropdown">
-                  <a class="dropdown-item" href="#">
-                      <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Profile
-                  </a>
-                  <a class="dropdown-item" href="#">
-                      <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Settings
-                  </a>
-                  <a class="dropdown-item" href="#">
-                      <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Activity Log
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a id="signOutBtn" class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Logout
-                  </a>
-                </div>
-              </section>
-
-              
-          </li>
           </ul>
 
           
-        </div>
-      </nav>
+          <section id="whenSignedOut">
+            <button id="signInBtn" type="button" class="btn btn-primary">Sign In</button>
+          </section>
 
-    
+          <section id="whenSignedIn"></section>
+            <div class="md-form my-0">
+              <div class="topbar-divider d-none d-sm-block"></div>
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span id = "displayName">Sign In First</span>
+                <img class="img-profile rounded-circle"
+                    src=""+user.photoURL>
+              </a>
+
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+              aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a id="signOutBtn" class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                </a>
+              </div>
+            </div>
+          </section>
+      </div>
+    </nav>
+
+
+    <form class="form-horizontal">
+      <fieldset>
       
-
+      <!-- Form Name -->
+      <legend>Call of Duty Details</legend>
+      
+      <!-- Prepended text-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="prependedtext"></label>
+        <div class="col-md-5">
+          <div class="input-group">
+            <span class="input-group-addon">Call of Duty ID</span>
+            <input id="calldutyid" name="callofdutyid" class="form-control" placeholder="person123" type="text" required="">
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="submit"></label>
+        <div class="col-md-4">
+          <button id="submit" name="submit" class="btn btn-primary" onclick="updateAccount()">Update Account</button>
+        </div>
+      </div>
+      
+      </fieldset>
+      </form>
 
   </body>
 </html>
